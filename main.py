@@ -36,7 +36,6 @@ class Ui_MainWindow(object):
         self.exit_button.setGeometry(QtCore.QRect(340, 380, 90, 28))
         self.exit_button.setObjectName("exit_button")
         self.exit_button.clicked.connect(self.exit_button_handler)
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 440, 22))
@@ -67,15 +66,16 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(_translate("MainWindow", "About"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
 
-    # This is where button action happens TG
+    # This is where button action happens
     def open_button_handler(self):
         print('button pressed')
         self.open_dialog_box()
 
+    # This button simply quits the program
     def exit_button_handler(self):
-        print('exit button pressed')
+        MainWindow.close()
 
-    # This is where file dialog opens TG
+    # File dialog opens, lets you choose file and then process it
     def open_dialog_box(self):
         filename = QFileDialog.getOpenFileName()
         path = filename[0]
@@ -103,10 +103,6 @@ class Ui_MainWindow(object):
             allmp3 = "rm *.mp3"
             os.system(allmp3)
         print('done yup')
-        # msg = QMessageBox()
-        # msg.setWindowTitle('Complete')
-        # msg.setText('File generation complete!')
-    #     self.gen_from_file()
 
 
 if __name__ == "__main__":
