@@ -3,8 +3,8 @@ import gtts
 import sys
 import os
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtWidgets import QDialog, QApplication, QFileDialog, QMessageBox
-from PyQt5.uic import loadUi
+from PyQt5.QtWidgets import QFileDialog, QMessageBox
+# from PyQt5.uic import loadUi
 
 
 class Ui_MainWindow(object):
@@ -58,6 +58,14 @@ class Ui_MainWindow(object):
     def exit_button_handler(self):
         MainWindow.close()
 
+    # Creates dialog box to inform of task completion
+    def show_dialog(self):
+        dialog = QMessageBox(MainWindow)
+        dialog.setText('Your files have been generated successfully.')
+        dialog.setWindowTitle('Information')
+        dialog.setIcon(QMessageBox.Information)
+        dialog.exec_()
+
     # File dialog opens, lets you choose file and then process it
     def open_dialog_box(self):
         filename = QFileDialog.getOpenFileName()
@@ -86,6 +94,7 @@ class Ui_MainWindow(object):
             allmp3 = "rm *.mp3"
             os.system(allmp3)
         print('done yup')
+        self.show_dialog()
 
 
 if __name__ == "__main__":
