@@ -31,25 +31,11 @@ class Ui_MainWindow(object):
         self.text.setScaledContents(True)
         self.text.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
         self.text.setObjectName("text")
-
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
         self.exit_button.setGeometry(QtCore.QRect(340, 380, 90, 28))
         self.exit_button.setObjectName("exit_button")
         self.exit_button.clicked.connect(self.exit_button_handler)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 440, 22))
-        self.menubar.setObjectName("menubar")
-        self.menuFile = QtWidgets.QMenu(self.menubar)
-        self.menuFile.setObjectName("menuFile")
-        MainWindow.setMenuBar(self.menubar)
-        self.actionAbout = QtWidgets.QAction(MainWindow)
-        self.actionAbout.setObjectName("actionAbout")
-        self.actionExit = QtWidgets.QAction(MainWindow)
-        self.actionExit.setObjectName("actionExit")
-        self.menuFile.addAction(self.actionAbout)
-        self.menuFile.addAction(self.actionExit)
-        self.menubar.addAction(self.menuFile.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -62,9 +48,6 @@ class Ui_MainWindow(object):
         self.exit_button.setText(_translate("MainWindow", "Exit"))
         self.text.setText(_translate(
             "MainWindow", "txt2voice 2.0a \n\nTim Gore (KE6QBV / WRUK522)\n2023 CC BY-NC"))
-        self.menuFile.setTitle(_translate("MainWindow", "File"))
-        self.actionAbout.setText(_translate("MainWindow", "About"))
-        self.actionExit.setText(_translate("MainWindow", "Exit"))
 
     # This is where button action happens
     def open_button_handler(self):
