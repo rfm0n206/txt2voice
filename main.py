@@ -23,14 +23,34 @@ class Ui_MainWindow(object):
         self.logo.setPixmap(QtGui.QPixmap("logo.png"))
         self.logo.setScaledContents(True)
         self.logo.setObjectName("logo")
-        self.text = QtWidgets.QLabel(self.centralwidget)
-        self.text.setGeometry(QtCore.QRect(10, 180, 421, 191))
+        # text1 is the app title under logo
+        self.text1 = QtWidgets.QLabel(self.centralwidget)
+        self.text1.setGeometry(QtCore.QRect(10, 180, 421, 60))
         font = QtGui.QFont()
-        font.setPointSize(11)
-        self.text.setFont(font)
-        self.text.setScaledContents(True)
-        self.text.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
-        self.text.setObjectName("text")
+        font.setPointSize(16)
+        self.text1.setFont(font)
+        self.text1.setScaledContents(True)
+        self.text1.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
+        self.text1.setObjectName("text1")
+        # text2 is the label with creator credit
+        self.text2 = QtWidgets.QLabel(self.centralwidget)
+        self.text2.setGeometry(QtCore.QRect(80, 210, 281, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.text2.setFont(font)
+        self.text2.setScaledContents(True)
+        self.text2.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
+        self.text2.setObjectName('text2')
+        # text3 is the written directions in the main window
+        self.text3 = QtWidgets.QLabel(self.centralwidget)
+        self.text3.setGeometry(QtCore.QRect(30, 250, 381, 111))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.text3.setFont(font)
+        self.text3.setScaledContents(True)
+        self.text3.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
+        self.text3.setObjectName('text3')
+        self.text3.setWordWrap(True)
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
         self.exit_button.setGeometry(QtCore.QRect(340, 380, 90, 28))
         self.exit_button.setObjectName("exit_button")
@@ -46,8 +66,12 @@ class Ui_MainWindow(object):
             "txt2voice 2.0a", "txt2voice 2.0a"))
         self.open_button.setText(_translate("MainWindow", "Select file"))
         self.exit_button.setText(_translate("MainWindow", "Exit"))
-        self.text.setText(_translate(
-            "MainWindow", "txt2voice 2.0a \n\nTim Gore (KE6QBV / WRUK522)\n2023 CC BY-NC"))
+        self.text1.setText(_translate(
+            "MainWindow", "txt2voice 2.0a"))
+        self.text2.setText(_translate(
+            'MainWindow', 'Tim Gore KE6QBV / WRUK522'))
+        self.text3.setText(_translate(
+            'MainWindow', 'Select a txt file that contains a listing of what you want generated. Software will create the voice files and save them to the same directory as this script. '))
 
     # This is where button action happens
     def open_button_handler(self):
