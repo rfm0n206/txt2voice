@@ -22,7 +22,7 @@ A list of the requisite python modules can be found in the requirements.txt file
 
 **COMPATIBILITY**
 
-This program has only been tested with Linux (Ubuntu, Debian and Linux Mint, Kali, DragonOS). By it's very nature, Python is a cross platform programming language, so it should work on Windows or MacOS, allbeit with some modifications. For the time being I don't have any plans to add Windows compatability. If you want to fork this code and add Windows compatability, drop me a line on Github. I'm tgore323
+This program has only been tested with Linux (Ubuntu, Debian and Linux Mint, Kali, DragonOS). By it's very nature, Python is a cross platform programming language, so it should work on Windows or MacOS, allbeit with some modifications. I'd like to add Windows compatability in the near future. If you want to fork this code and add Windows compatability, drop me a line on Github. I'm tgore323. It seems like a little modification of how ffmpeg works on Windows command prompt/PS.
 
 **INSTRUCTIONS**
 
