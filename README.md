@@ -2,6 +2,9 @@
 by Tim Gore, KE6QBV / WRUK522
 tim@ke6qbv.com
 
+![window](https://user-images.githubusercontent.com/42504288/234785283-281294c8-4980-4f47-ba7b-1710834c3598.png)
+
+
 **ABOUT**
 
 _txt2voice_ is a small python program to create channel announcement voice files for use with Motorola public safety and commercial two-way radios.
