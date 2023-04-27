@@ -4,28 +4,27 @@ import sys
 import os
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
-# from PyQt5.uic import loadUi
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(440, 460)
+        MainWindow.resize(329, 375)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.open_button = QtWidgets.QPushButton(self.centralwidget)
-        self.open_button.setGeometry(QtCore.QRect(10, 380, 90, 28))
+        self.open_button.setGeometry(QtCore.QRect(40, 330, 90, 28))
         self.open_button.setObjectName("pushButton")
         self.open_button.clicked.connect(self.open_button_handler)
         self.logo = QtWidgets.QLabel(self.centralwidget)
-        self.logo.setGeometry(QtCore.QRect(130, 10, 181, 161))
+        self.logo.setGeometry(QtCore.QRect(80, 10, 171, 161))
         self.logo.setText("")
         self.logo.setPixmap(QtGui.QPixmap("logo.png"))
         self.logo.setScaledContents(True)
         self.logo.setObjectName("logo")
         # text1 is the app title under logo
         self.text1 = QtWidgets.QLabel(self.centralwidget)
-        self.text1.setGeometry(QtCore.QRect(10, 180, 421, 60))
+        self.text1.setGeometry(QtCore.QRect(10, 180, 311, 33))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.text1.setFont(font)
@@ -34,7 +33,7 @@ class Ui_MainWindow(object):
         self.text1.setObjectName("text1")
         # text2 is the label with creator credit
         self.text2 = QtWidgets.QLabel(self.centralwidget)
-        self.text2.setGeometry(QtCore.QRect(80, 210, 281, 31))
+        self.text2.setGeometry(QtCore.QRect(10, 210, 311, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.text2.setFont(font)
@@ -43,7 +42,7 @@ class Ui_MainWindow(object):
         self.text2.setObjectName('text2')
         # text3 is the written directions in the main window
         self.text3 = QtWidgets.QLabel(self.centralwidget)
-        self.text3.setGeometry(QtCore.QRect(30, 250, 381, 111))
+        self.text3.setGeometry(QtCore.QRect(10, 250, 311, 61))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.text3.setFont(font)
@@ -52,11 +51,10 @@ class Ui_MainWindow(object):
         self.text3.setObjectName('text3')
         self.text3.setWordWrap(True)
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
-        self.exit_button.setGeometry(QtCore.QRect(340, 380, 90, 28))
+        self.exit_button.setGeometry(QtCore.QRect(190, 330, 90, 28))
         self.exit_button.setObjectName("exit_button")
         self.exit_button.clicked.connect(self.exit_button_handler)
         MainWindow.setCentralWidget(self.centralwidget)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -113,6 +111,7 @@ class Ui_MainWindow(object):
                 # convert wav to mp3
                 os.system(
                     f"""ffmpeg -i {file} -acodec pcm_s16le -ar 8000 {file[:-4]}.wav""")
+
             # delete mp3 files after wav created
             currentdir = os.getcwd() + '/*.mp3'
             allmp3 = "rm *.mp3"
