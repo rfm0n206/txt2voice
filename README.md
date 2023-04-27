@@ -2,8 +2,9 @@
 by Tim Gore, KE6QBV / WRUK522
 tim@ke6qbv.com
 
+<p align="center">
 ![window](https://user-images.githubusercontent.com/42504288/234785283-281294c8-4980-4f47-ba7b-1710834c3598.png)
-
+</p>
 
 **ABOUT**
 
