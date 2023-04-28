@@ -17,6 +17,7 @@ The only requirement outside of python libraries is ffmpeg. On Ubuntu/Debian/Lin
 A list of the requisite python modules can be found in the requirements.txt file. These modules are usually installed using pip. Example commands would be:
 
 `pip install gtts`
+
 `pip install PyQt5`
 
 **COMPATIBILITY**
@@ -28,7 +29,9 @@ This program has only been tested with Linux (Ubuntu, Debian and Linux Mint, Kal
 Run the program like this:
 
 `python main.py`
+
 or
+
 `python3 main.py`
 
 **IMPORTANT INFO REGARDING TEXT FILES**
