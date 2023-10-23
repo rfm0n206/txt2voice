@@ -47,4 +47,5 @@ at end of file, or you'll get an "AssertionError: No text to speak" (See to-do i
 - clean up code
 - If ffmpeg isn't installed, prompt user to do so
 - Add error reporting
+- Add progress bar
 - Preferences and config files
