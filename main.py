@@ -93,34 +93,38 @@ class Ui_MainWindow(object):
     # File dialog opens, lets you choose file and then process it
     def open_dialog_box(self):
         filename = QFileDialog.getOpenFileName()
-        path = filename[0]
-        print(path)
-        list = []
-        cwd = os.getcwd()
-        list = open(path).read().splitlines()
-        for line in list:
-            line = line.rstrip()
-        for x in range(len(list)):
-            tts = gtts.gTTS(list[x], lang="en")
-            filename = list[x] + ".mp3"
-            filename = filename.replace(" ", "_")
-            filename = filename.lower()
-            tts.save(filename)
-            print("\nCreating file: " + filename)
-            lst = glob.glob("*.mp3")
-            print(lst)
-            for file in lst:
-                # convert wav to mp3
-                os.system(
-                    f"""ffmpeg -i {file} -acodec pcm_s16le -ar 8000 {file[:-4]}.wav""")
+        try:
+            path = filename[0]
+            print(path)
+            list = []
+            cwd = os.getcwd()
+            list = open(path).read().splitlines()
+            for line in list:
+                line = line.rstrip()
+            for x in range(len(list)):
+                tts = gtts.gTTS(list[x], lang="en")
+                filename = list[x] + ".mp3"
+                filename = filename.replace(" ", "_")
+                filename = filename.lower()
+                tts.save(filename)
+                print("\nCreating file: " + filename)
+                lst = glob.glob("*.mp3")
+                print(lst)
+                for file in lst:
+                    # convert wav to mp3
+                    os.system(
+                        f"""ffmpeg -i {file} -acodec pcm_s16le -ar 8000 {file[:-4]}.wav""")
 
-            # delete mp3 files after wav created
-            currentdir = os.getcwd() + '/*.mp3'
-            allmp3 = "rm *.mp3"
-            os.system(allmp3)
-        print('done yup')
-        self.show_dialog()
-
+                # delete mp3 files after wav created
+                currentdir = os.getcwd() + '/*.mp3'
+                allmp3 = "rm *.mp3"
+                os.system(allmp3)
+            print('done yup')
+            self.show_dialog()
+        except FileNotFoundError:
+            print("You must pick a text file for this program to function. Please go back and pick a file")
+        except UnicodeDecodeError:
+            print("Cannot read the file. Could it not be a valid text file?")
 
 if __name__ == "__main__":
     import sys
