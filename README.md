@@ -1,6 +1,6 @@
 # txt2voice 2.0a
 by Tim Gore, KE6QBV / WRUK522
-tim@rfm0n.com
+
 
 ![window](https://user-images.githubusercontent.com/42504288/235054140-948e6913-c60c-4096-9981-b3cccf08fe4b.png)
 
